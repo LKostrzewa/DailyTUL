@@ -9,8 +9,11 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
+
+import static com.example.myapplication.R.drawable.tul_logo;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,7 +42,10 @@ public class MainActivity extends AppCompatActivity {
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setContentTitle("Daily TUL")
                 .setContentText("Politechnika jest super")
-                .setAutoCancel(true);
+                .setAutoCancel(true)
+                .setLargeIcon(BitmapFactory.decodeResource(getResources(), tul_logo))
+                .setStyle(new NotificationCompat.BigTextStyle()
+                        .bigText(getResources().getString(R.string.regulamin)));
 
         /*Intent intent = new Intent(getApplicationContext(), ACTIVITY_NAME.class);
         PendingIntent pi = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);

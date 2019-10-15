@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="regulamin">
+Rozdział 1
+Wstęp
+Regulamin Studiów w Politechnice Łódzkiej obowiązuje studentów i pracowników Uczelni, w zakresie organizacji
+i przebiegu procesu kształcenia. Przy podejmowaniu decyzji w oparciu o Regulamin należy kierować się zrozumieniem
+potrzeb, praw i obowiązków studentów oraz dobrem Politechniki Łódzkiej. </string>
 </resources>
