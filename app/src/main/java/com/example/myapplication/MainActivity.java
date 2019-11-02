@@ -111,6 +111,13 @@ public class MainActivity extends AppCompatActivity implements OnCompleteListene
         } else {
             performPendingGeofenceTask();
         }
+
+        if (!checkPermissions()) {
+            mPendingGeofenceTask = PendingGeofenceTask.ADD;
+            requestPermissions();
+            return;
+        }
+        addGeofences();
     }
 
     public void onClick(View view) {
@@ -288,12 +295,11 @@ public class MainActivity extends AppCompatActivity implements OnCompleteListene
 
                     // Set the expiration duration of the geofence. This geofence gets automatically
                     // removed after this period of time.
-                    .setExpirationDuration(Constants.GEOFENCE_EXPIRATION_IN_MILLISECONDS)
+                    .setExpirationDuration(Geofence.NEVER_EXPIRE)
 
                     // Set the transition types of interest. Alerts are only generated for these
-                    // transition. We track entry and exit transitions in this sample.
-                    .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_ENTER |
-                            Geofence.GEOFENCE_TRANSITION_EXIT)
+                    // transition. We track entry transitions in this sample.
+                    .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_ENTER)
 
                     // Create the geofence.
                     .build());

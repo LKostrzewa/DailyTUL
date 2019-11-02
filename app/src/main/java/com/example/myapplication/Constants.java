@@ -29,7 +29,7 @@ final class Constants {
      */
     static final long GEOFENCE_EXPIRATION_IN_MILLISECONDS =
             GEOFENCE_EXPIRATION_IN_HOURS * 60 * 60 * 1000;
-    static final float GEOFENCE_RADIUS_IN_METERS = 50; // 1 mile, 1.6 km
+    static final float GEOFENCE_RADIUS_IN_METERS = 50;
 
     /**
      * Map for storing information about airports in the San Francisco bay area.
@@ -41,6 +41,7 @@ final class Constants {
         BAY_AREA_LANDMARKS.put("SFO", new LatLng(51.806450, 19.678200));
 
         // Googleplex.
-        BAY_AREA_LANDMARKS.put("GOOGLE", new LatLng(51.296811, 18.164776));
+        BAY_AREA_LANDMARKS.put("Patka", new LatLng(51.296811, 18.164776));
+
     }
 }

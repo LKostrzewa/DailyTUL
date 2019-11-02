@@ -6,7 +6,6 @@ import android.content.Intent;
 
 /**
  * Receiver for geofence transition changes.
- * <p>
  * Receives geofence transition events from Location Services in the form of an Intent containing
  * the transition type and geofence id(s) that triggered the transition. Creates a JobIntentService
  * that will handle the intent in the background.

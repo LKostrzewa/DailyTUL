@@ -29,7 +29,7 @@ potrzeb, praw i obowiązków studentów oraz dobrem Politechniki Łódzkiej. </s
     </string>
 
     <!-- Transition type strings -->
-    <string name="geofence_transition_entered">Entered</string>
+    <string name="geofence_transition_entered">You are near</string>
     <string name="geofence_transition_exited">Exited</string>
     <string name="unknown_geofence_transition">Unknown Transition</string>
 
