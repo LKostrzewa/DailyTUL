@@ -73,8 +73,10 @@ public class GeofenceTransitionsJobIntentService extends JobIntentService {
             String geofenceTransitionDetails = getGeofenceTransitionDetails(geofenceTransition,
                     triggeringGeofences);
 
+            String geofenceBigText = getResources().getString(getResources().getIdentifier(triggeringGeofences.get(0).getRequestId().toString(), "string", "com.example.myapplication"));
+
             // Send notification and log the transition details.
-            sendNotification(geofenceTransitionDetails);
+            sendNotification(geofenceTransitionDetails, geofenceBigText);
             Log.i(TAG, geofenceTransitionDetails);
         } else {
             // Log the error.
@@ -105,11 +107,12 @@ public class GeofenceTransitionsJobIntentService extends JobIntentService {
         return geofenceTransitionString + ": " + triggeringGeofencesIdsString;
     }
 
+
     /**
      * Posts a notification in the notification bar when a transition is detected.
      * If the user clicks the notification, control goes to the MainActivity.
      */
-    private void sendNotification(String notificationDetails) {
+    private void sendNotification(String notificationDetails, String notificationBigText) {
         // Get an instance of the Notification manager
         NotificationManager mNotificationManager =
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
@@ -153,7 +156,9 @@ public class GeofenceTransitionsJobIntentService extends JobIntentService {
                 .setColor(Color.RED)
                 .setContentTitle(notificationDetails)
                 .setContentText(getString(R.string.geofence_transition_notification_text))
-                .setContentIntent(notificationPendingIntent);
+                .setContentIntent(notificationPendingIntent)
+                .setStyle(new NotificationCompat.BigTextStyle()
+                .bigText(notificationBigText));
 
         // Set the Channel ID for Android O.
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {

@@ -38,10 +38,10 @@ final class Constants {
 
     static {
         // San Francisco International Airport.
-        BAY_AREA_LANDMARKS.put("SFO", new LatLng(51.806450, 19.678200));
+        BAY_AREA_LANDMARKS.put("B16", new LatLng(51.746411, 19.453246));
 
         // Googleplex.
-        BAY_AREA_LANDMARKS.put("Patka", new LatLng(51.296811, 18.164776));
+        BAY_AREA_LANDMARKS.put("CTI", new LatLng(51.747070, 19.455991));
 
     }
 }
