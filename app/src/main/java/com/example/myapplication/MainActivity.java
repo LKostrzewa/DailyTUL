@@ -112,12 +112,14 @@ public class MainActivity extends AppCompatActivity implements OnCompleteListene
             performPendingGeofenceTask();
         }
 
-        if (!checkPermissions()) {
-            mPendingGeofenceTask = PendingGeofenceTask.ADD;
-            requestPermissions();
-            return;
+        if (!getGeofencesAdded()) {
+            if (!checkPermissions()) {
+                mPendingGeofenceTask = PendingGeofenceTask.ADD;
+                requestPermissions();
+                return;
+            }
+            addGeofences();
         }
-        addGeofences();
     }
 
     public void onClick(View view) {
@@ -237,6 +239,7 @@ public class MainActivity extends AppCompatActivity implements OnCompleteListene
     /**
      * Runs when the result of calling {@link #addGeofences()} and/or {@link #removeGeofences()}
      * is available.
+     *
      * @param task the resulting Task, containing either a result or error.
      */
     @Override
