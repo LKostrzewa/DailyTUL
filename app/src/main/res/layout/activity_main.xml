@@ -1,10 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/RelativeLayout1"
     tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button"
+        android:layout_marginEnd="-15dp"
+        android:layout_marginRight="-13dp"
+        android:layout_marginBottom="40dp"
+        android:layout_toStartOf="@+id/button"
+        android:layout_toLeftOf="@+id/button"
+        android:onClick="onClick"
+        android:text="Przeglądaj"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.229"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.377" />
 
     <Button
         android:id="@+id/button"
@@ -12,8 +32,108 @@
         android:layout_height="wrap_content"
         android:onClick="onClick"
         android:text="Button"
+        android:layout_centerInParent="true"
+
+        />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginBottom="40dp"
+        android:layout_toEndOf="@+id/button"
+        android:layout_toRightOf="@+id/button"
+        android:text="Losuj"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.773"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.377" />
+
+
+    <ImageButton
+        android:id="@+id/imageButton1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_above="@+id/imageButton2"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_toStartOf="@+id/imageButton3"
+        android:layout_toLeftOf="@+id/imageButton3"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@+id/imageButton4"
+        android:layout_toLeftOf="@+id/imageButton4"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_above="@+id/imageButton4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="0dp"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_above="@+id/imageButton6"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_toEndOf="@+id/imageButton3"
+        android:layout_toRightOf="@+id/imageButton3"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_toEndOf="@+id/imageButton4"
+        android:layout_toRightOf="@+id/imageButton4"
+        android:layout_alignParentBottom="true"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        tools:srcCompat="@color/colorPrimaryDark" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/tul_logo" />
+
+
+</RelativeLayout>

@@ -3,16 +3,22 @@ package com.example.myapplication;
 import android.Manifest;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.Point;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.util.Log;
+import android.view.Display;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -38,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements OnCompleteListene
 
     private static final int REQUEST_PERMISSIONS_REQUEST_CODE = 34;
 
-
+    private Button button1;
     /**
      * Tracks whether the user requested to add or remove geofences, or to do neither.
      */
@@ -67,11 +73,83 @@ public class MainActivity extends AppCompatActivity implements OnCompleteListene
 
     private PendingGeofenceTask mPendingGeofenceTask = PendingGeofenceTask.NONE;
 
+    public void scaleButtonImages(){
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        int width = size.x;
+        int height = size.y;
+        final ImageView im = (ImageView) findViewById(R.id.imageView2);
+        final RelativeLayout rl = (RelativeLayout) findViewById(R.id.RelativeLayout1);
+        final ImageButton ib1 = (ImageButton) findViewById(R.id.imageButton1);
+        final ImageButton ib2 = (ImageButton) findViewById(R.id.imageButton2);
+        final ImageButton ib3 = (ImageButton) findViewById(R.id.imageButton3);
+        final ImageButton ib4 = (ImageButton) findViewById(R.id.imageButton4);
+        final ImageButton ib5 = (ImageButton) findViewById(R.id.imageButton5);
+        final ImageButton ib6 = (ImageButton) findViewById(R.id.imageButton6);
+
+
+        // Get the last ImageButton's layout parameters
+        RelativeLayout.LayoutParams params1 = (RelativeLayout.LayoutParams) ib1.getLayoutParams();
+        RelativeLayout.LayoutParams params2 = (RelativeLayout.LayoutParams) ib2.getLayoutParams();
+        RelativeLayout.LayoutParams params3 = (RelativeLayout.LayoutParams) ib3.getLayoutParams();
+        RelativeLayout.LayoutParams params4 = (RelativeLayout.LayoutParams) ib4.getLayoutParams();
+        RelativeLayout.LayoutParams params5 = (RelativeLayout.LayoutParams) ib5.getLayoutParams();
+        RelativeLayout.LayoutParams params6 = (RelativeLayout.LayoutParams) ib6.getLayoutParams();
+        RelativeLayout.LayoutParams imgParams = (RelativeLayout.LayoutParams) im.getLayoutParams();
+
+        int X = width/3;
+        int Y = X;
+        params1.width = X;
+        params2.width = X;
+        params3.width = X;
+        params4.width = X;
+        params5.width = X;
+        params6.width = X;
+        params1.height = Y;
+        params2.height = Y;
+        params3.height = Y;
+        params4.height = Y;
+        params5.height = Y;
+        params6.height = Y;
+
+        imgParams.height = (int)(X * 0.2);
+        imgParams.width = X;
+        // Apply the updated layout parameters to last ImageButton
+        ib1.setLayoutParams(params1);
+        ib2.setLayoutParams(params2);
+        ib3.setLayoutParams(params3);
+        ib4.setLayoutParams(params4);
+        ib5.setLayoutParams(params5);
+        ib6.setLayoutParams(params6);
+        im.setLayoutParams(imgParams);
+
+        // Set the ImageButton image scale type for fourth ImageButton
+        ib1.setScaleType(ImageView.ScaleType.FIT_XY);
+        ib2.setScaleType(ImageView.ScaleType.FIT_XY);
+        ib3.setScaleType(ImageView.ScaleType.FIT_XY);
+        ib4.setScaleType(ImageView.ScaleType.FIT_XY);
+        ib5.setScaleType(ImageView.ScaleType.FIT_XY);
+        ib6.setScaleType(ImageView.ScaleType.FIT_XY);
+        //im.setScaleType(ImageView.ScaleType.CENTER);
+
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        scaleButtonImages();
 
+
+        button1 = (Button) findViewById(R.id.button5);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openChoiceActivity();
+            }
+        });
 
         Calendar calendar = Calendar.getInstance();
 
@@ -100,6 +178,11 @@ public class MainActivity extends AppCompatActivity implements OnCompleteListene
         populateGeofenceList();
 
         mGeofencingClient = LocationServices.getGeofencingClient(this);
+    }
+
+    public void openChoiceActivity(){
+        Intent intent = new Intent(this, ChoiceActivity.class);
+        startActivity(intent);
     }
 
     @Override
@@ -337,6 +420,9 @@ public class MainActivity extends AppCompatActivity implements OnCompleteListene
                 Snackbar.LENGTH_INDEFINITE)
                 .setAction(getString(actionStringId), listener).show();
     }
+
+
+
 
     /**
      * Returns true if geofences were added, otherwise false.

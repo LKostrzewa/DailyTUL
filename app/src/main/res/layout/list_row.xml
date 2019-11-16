@@ -1,0 +1,9 @@
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/Row"
+    android:layout_width="fill_parent"
+    android:layout_height="80dp"
+    android:paddingLeft="100dp"
+    android:onClick="info"
+    android:textSize="50dp" >
+
+</TextView>
