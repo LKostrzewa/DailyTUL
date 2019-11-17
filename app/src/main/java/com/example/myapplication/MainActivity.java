@@ -212,35 +212,6 @@ public class MainActivity extends AppCompatActivity implements OnCompleteListene
             return;
         }
         addGeofences();
-
-        ////TO BYLO WCZESNIEJ
-
-        /*NotificationManager mNotificationManager =
-                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-
-
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            NotificationChannel channel = new NotificationChannel("CHANNEL_ID",
-                    "CHANNEL_NAME",
-                    NotificationManager.IMPORTANCE_DEFAULT);
-            //channel.setDescription("YOUR_NOTIFICATION_CHANNEL_DISCRIPTION");
-            mNotificationManager.createNotificationChannel(channel);
-        }/*
-
-        /*NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(getApplicationContext(), "CHANNEL_ID")
-                .setSmallIcon(R.mipmap.ic_launcher)
-                .setContentTitle("Daily TUL")
-                .setContentText("Politechnika jest super")
-                .setAutoCancel(true)
-                .setLargeIcon(BitmapFactory.decodeResource(getResources(), tul_logo))
-                .setStyle(new NotificationCompat.BigTextStyle()
-                        .bigText(getResources().getString(R.string.regulamin)));
-
-        /*Intent intent = new Intent(getApplicationContext(), ACTIVITY_NAME.class);
-        PendingIntent pi = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-        mBuilder.setContentIntent(pi);*/
-
-        /*mNotificationManager.notify(0, mBuilder.build());*/
     }
 
 

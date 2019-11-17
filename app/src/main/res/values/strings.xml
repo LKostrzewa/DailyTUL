@@ -1,11 +1,22 @@
 <resources>
+    <!-- REGULAMIN STRINGS -->
     <string name="app_name">My Application</string>
-    <string name="regulamin">
-Rozdział 1
-Wstęp
-Regulamin Studiów w Politechnice Łódzkiej obowiązuje studentów i pracowników Uczelni, w zakresie organizacji
-i przebiegu procesu kształcenia. Przy podejmowaniu decyzji w oparciu o Regulamin należy kierować się zrozumieniem
-potrzeb, praw i obowiązków studentów oraz dobrem Politechniki Łódzkiej. </string>
+    <string name="regulamin1">
+        Pamiętaj, że twoja praca dyplomowa musi zostać sprawdzona przez  Jednolity System Antyplagiatowy !!
+    </string>
+    <string name="regulamin2">
+        Limit nieobecności nieusprawiedliwionych na zajęciach wynosi 20% wszystkich odbywających się zajęć.
+    </string>
+    <string name="regulamin3">
+        Co semestr odbywa się losowanie kart parkingowych na Kampusy Politechniki Łódzkiej !
+    </string>
+    <string name="regulamin4">
+        Podczas każdej sesji Samorząd Studencki organizuje Pogotowie Sesyjne gdzie członkowie Komisji ds. Kształcenia
+        służą pomocą wszystkich zagubionym studentom.
+    </string>
+    <string name="regulamin5">
+        Termin zerowy nie wlicza się do liczby podejść do egzaminu przysługujących w sesji !
+    </string>
 
 
     <!-- Buttons strings -->

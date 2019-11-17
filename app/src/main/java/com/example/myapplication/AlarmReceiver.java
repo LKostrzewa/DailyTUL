@@ -10,7 +10,26 @@ import android.graphics.BitmapFactory;
 
 import androidx.core.app.NotificationCompat;
 
+import java.util.Random;
+
 public class AlarmReceiver extends BroadcastReceiver {
+
+    private int getRandomMsg(){
+        Random rand = new Random();
+        int num = rand.nextInt(5);
+        switch (num){
+            case 0 :
+                return R.string.regulamin1;
+            case 1 :
+                return R.string.regulamin2;
+            case 2 :
+                return R.string.regulamin3;
+            case 3 :
+                return R.string.regulamin4;
+            default:
+                return R.string.regulamin5;
+        }
+    }
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -36,12 +55,10 @@ public class AlarmReceiver extends BroadcastReceiver {
         NotificationCompat.Builder mNotifyBuilder = new NotificationCompat.Builder(
                 context, "CHANNEL_ID").setSmallIcon(R.mipmap.ic_launcher)
                 /*.setContentIntent(pendingIntent)*/
-                .setContentTitle("Daily TUL")
-                .setContentText("Politechnika jest super")
                 .setAutoCancel(true)
                 .setLargeIcon(BitmapFactory.decodeResource(context.getResources(), R.drawable.tul_logo))
                 .setStyle(new NotificationCompat.BigTextStyle()
-                        .bigText(context.getResources().getString(R.string.regulamin)));
+                        .bigText(context.getResources().getString(getRandomMsg())));
 
             mNotificationManager.notify(100, mNotifyBuilder.build());
 
