@@ -1,6 +1,6 @@
 <resources>
     <!-- REGULAMIN STRINGS -->
-    <string name="app_name">My Application</string>
+    <string name="app_name">DailyTUL</string>
     <string name="regulamin1">
         Pamiętaj, że twoja praca dyplomowa musi zostać sprawdzona przez  Jednolity System Antyplagiatowy !!
     </string>
