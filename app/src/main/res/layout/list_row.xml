@@ -3,7 +3,6 @@
     android:layout_width="fill_parent"
     android:layout_height="80dp"
     android:paddingLeft="100dp"
-    android:onClick="info"
     android:textSize="50dp" >
 
 </TextView>

@@ -40,9 +40,7 @@ public class ChoiceActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
 
 
-
-        //TODO: Naprawić to trzeba bo błąd wyrzuca
-        /*listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
@@ -52,7 +50,7 @@ public class ChoiceActivity extends AppCompatActivity {
 
 
             }
-        });*/
+        });
     }
 
 
