@@ -42,6 +42,7 @@ final class Constants {
 
         // Googleplex.
         BAY_AREA_LANDMARKS.put("CTI", new LatLng(51.747070, 19.455991));
+        BAY_AREA_LANDMARKS.put("Rektorat", new LatLng(51.748550, 19.453121));
 
     }
 }

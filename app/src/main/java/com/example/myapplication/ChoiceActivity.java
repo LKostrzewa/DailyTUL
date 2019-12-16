@@ -22,7 +22,7 @@ public class ChoiceActivity extends AppCompatActivity {
     private String[] myDataset;
 
     private void fillDataSet(){
-        myDataset = new String[] {"CTI","B16"};
+        myDataset = new String[] {"CTI","B16", "Rektorat"};
     }
 
 

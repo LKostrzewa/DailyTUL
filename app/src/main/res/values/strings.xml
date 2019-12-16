@@ -1,6 +1,6 @@
 <resources>
     <!-- REGULAMIN STRINGS -->
-    <string name="app_name">My Application</string>
+    <string name="app_name">DailyTUL</string>
     <string name="regulamin1">
         Pamiętaj, że twoja praca dyplomowa musi zostać sprawdzona przez  Jednolity System Antyplagiatowy !!
     </string>
@@ -54,6 +54,9 @@
         functionality.</string>
     <string name="settings">Settings</string>
 
-    <string name="B16">Architekci z PŁ mają swoją galerię w budynku B16</string>
-    <string name="CTI">Budynek CTI ma powierzchnię ponad 4500 m2, 21 specjalistycznych laboratoriów, salę kinową 3D, serwerownię oraz pomieszczenia wideokonferencyjne i pracownie dla studentów</string>
+<!--    <string name="B16">Architekci z PŁ mają swoją galerię w budynku B16</string>-->
+    <string name="B16">Pod tym budynkiem mogą znajdować się pokłady wody termalnej</string>
+<!--    <string name="CTI">Budynek CTI ma powierzchnię ponad 4500 m2, 21 specjalistycznych laboratoriów, salę kinową 3D, serwerownię oraz pomieszczenia wideokonferencyjne i pracownie dla studentów</string>-->
+    <string name="CTI">Zgodnie ze specyfikacją warunków zamówienia sprzętu komputerowego do CTI - klawiatury są odporne na zalanie :)</string>
+    <string name="Rektorat">Pożar wybuchł 8 lipca 2016 r. Dotąd PŁ wydała na ratowanie rektoratu ok. 4 mln zł, całkowity koszt szacuje na ok. 15 mln zł. </string>
 </resources>
