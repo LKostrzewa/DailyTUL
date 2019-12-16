@@ -46,9 +46,19 @@ public class ChoiceActivity extends AppCompatActivity {
 
                 String selectedItem = (String) parent.getItemAtPosition(position);
                 Intent intent = new Intent(view.getContext(), InfoActivity.class);
+                Bundle b = new Bundle();
+                switch (selectedItem){
+                    case "B16" :
+                        b.putInt("key", R.string.B16);
+                        break;
+                    case "CTI" :
+                        b.putInt("key", R.string.CTI);
+                    case "Rektorat" :
+                        b.putInt("key", R.string.Rektorat);
+                }
+
+                intent.putExtras(b);
                 startActivity(intent);
-
-
             }
         });
     }
