@@ -1,41 +1,34 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ChoiceActivity extends AppCompatActivity {
 
-    private String[] myDataset;
-
-    private void fillDataSet(){
-        myDataset = new String[] {"CTI","B16", "Rektorat"};
-    }
-
+    private Map<String, Integer> dataSet = new HashMap<String, Integer>() {{
+        put("CTI", R.string.CTI);
+        put("B16", R.string.B16);
+        put("Rektorat", R.string.Rektorat);
+    }};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        fillDataSet();
         setContentView(R.layout.activity_choice);
-        ListView listView = (ListView) findViewById(R.id.listView);
-        ArrayList<String> arrayList = new ArrayList<String>();
-        arrayList.addAll(Arrays.asList(myDataset));
+        ListView listView = findViewById(R.id.listView);
+        ArrayList<String> arrayList = new ArrayList<>(dataSet.keySet());
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_row, arrayList);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_row, arrayList);
 
         listView.setAdapter(adapter);
 
@@ -47,15 +40,7 @@ public class ChoiceActivity extends AppCompatActivity {
                 String selectedItem = (String) parent.getItemAtPosition(position);
                 Intent intent = new Intent(view.getContext(), InfoActivity.class);
                 Bundle b = new Bundle();
-                switch (selectedItem){
-                    case "B16" :
-                        b.putInt("key", R.string.B16);
-                        break;
-                    case "CTI" :
-                        b.putInt("key", R.string.CTI);
-                    case "Rektorat" :
-                        b.putInt("key", R.string.Rektorat);
-                }
+                b.putInt("key", dataSet.get(selectedItem));
 
                 intent.putExtras(b);
                 startActivity(intent);
