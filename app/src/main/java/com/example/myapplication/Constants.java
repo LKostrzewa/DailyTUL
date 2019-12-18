@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 
+import com.google.android.gms.location.Geofence;
 import com.google.android.gms.maps.model.LatLng;
 
 import java.util.HashMap;
@@ -27,22 +28,21 @@ final class Constants {
     /**
      * For this sample, geofences expire after twelve hours.
      */
-    static final long GEOFENCE_EXPIRATION_IN_MILLISECONDS =
-            GEOFENCE_EXPIRATION_IN_HOURS * 60 * 60 * 1000;
+    static final long GEOFENCE_EXPIRATION_IN_MILLISECONDS = Geofence.NEVER_EXPIRE;
     static final float GEOFENCE_RADIUS_IN_METERS = 50;
 
     /**
      * Map for storing information about airports in the San Francisco bay area.
      */
-    static final HashMap<String, LatLng> BAY_AREA_LANDMARKS = new HashMap<>();
+    static final HashMap<String, LatLng> GEOFENCE_LOCATIONS = new HashMap<>();
 
     static {
         // San Francisco International Airport.
-        BAY_AREA_LANDMARKS.put("B16", new LatLng(51.746411, 19.453246));
+        GEOFENCE_LOCATIONS.put("B16", new LatLng(51.746411, 19.453246));
 
         // Googleplex.
-        BAY_AREA_LANDMARKS.put("CTI", new LatLng(51.747070, 19.455991));
-        BAY_AREA_LANDMARKS.put("Rektorat", new LatLng(51.748550, 19.453121));
+        GEOFENCE_LOCATIONS.put("CTI", new LatLng(51.747070, 19.455991));
+        GEOFENCE_LOCATIONS.put("Rektorat", new LatLng(51.748550, 19.453121));
 
     }
 }
