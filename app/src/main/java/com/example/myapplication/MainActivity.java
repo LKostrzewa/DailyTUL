@@ -36,7 +36,9 @@ import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity implements OnCompleteListener<Void> {
 
@@ -45,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements OnCompleteListene
     private static final int REQUEST_PERMISSIONS_REQUEST_CODE = 34;
 
     private Button button1;
+    private Button button2;
     /**
      * Tracks whether the user requested to add or remove geofences, or to do neither.
      */
@@ -151,6 +154,14 @@ public class MainActivity extends AppCompatActivity implements OnCompleteListene
             }
         });
 
+        button2 = (Button) findViewById((R.id.button3));
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openInfoActivity();
+            }
+        });
+
         Calendar calendar = Calendar.getInstance();
 
         calendar.set(Calendar.HOUR_OF_DAY, 6);
@@ -182,6 +193,19 @@ public class MainActivity extends AppCompatActivity implements OnCompleteListene
 
     public void openChoiceActivity(){
         Intent intent = new Intent(this, ChoiceActivity.class);
+        startActivity(intent);
+    }
+
+    public void openInfoActivity(){
+        Random generator = new Random();
+        Map<String, Integer> dataSet = ChoiceActivity.getDataSet();
+        Object[] values = dataSet.values().toArray();
+        Bundle b = new Bundle();
+        int randomValue = (int) values[generator.nextInt(values.length)];
+        b.putInt("key", randomValue);
+
+        Intent intent = new Intent(this, InfoActivity.class);
+        intent.putExtras(b);
         startActivity(intent);
     }
 

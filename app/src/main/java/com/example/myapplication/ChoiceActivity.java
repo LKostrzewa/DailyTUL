@@ -15,11 +15,15 @@ import java.util.Map;
 
 public class ChoiceActivity extends AppCompatActivity {
 
-    private Map<String, Integer> dataSet = new HashMap<String, Integer>() {{
+    static Map<String, Integer> dataSet = new HashMap<String, Integer>() {{
         put("CTI", R.string.CTI);
         put("B16", R.string.B16);
         put("Rektorat", R.string.Rektorat);
     }};
+
+    public static Map<String, Integer> getDataSet(){
+        return dataSet;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
