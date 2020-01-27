@@ -19,6 +19,8 @@ public class ChoiceActivity extends AppCompatActivity {
         put("CTI", R.string.CTI);
         put("B16", R.string.B16);
         put("Rektorat", R.string.Rektorat);
+        put("Zatoka Sportu", R.string.Zatoka);
+        put("Biblioteka główna", R.string.Biblio);
     }};
 
     public static Map<String, Integer> getDataSet(){
