@@ -73,7 +73,7 @@ public class GeofenceTransitionsJobIntentService extends JobIntentService {
             String geofenceTransitionDetails = getGeofenceTransitionDetails(geofenceTransition,
                     triggeringGeofences);
 
-            String geofenceBigText = getResources().getString(getResources().getIdentifier(triggeringGeofences.get(0).getRequestId().toString(), "string", "com.example.myapplication"));
+            String geofenceBigText = getResources().getString(getResources().getIdentifier(triggeringGeofences.get(0).getRequestId().toString(), "string", "com.kjawo.DailyTUL"));
 
             // Send notification and log the transition details.
             sendNotification(geofenceTransitionDetails, geofenceBigText);
