@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.kjawo.DailyTUL;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -36,6 +36,7 @@ public class ChoiceActivity extends AppCompatActivity {
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_row, arrayList);
 
+        
         listView.setAdapter(adapter);
 
 

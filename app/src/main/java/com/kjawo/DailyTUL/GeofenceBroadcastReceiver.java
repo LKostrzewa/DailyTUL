@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.kjawo.DailyTUL;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

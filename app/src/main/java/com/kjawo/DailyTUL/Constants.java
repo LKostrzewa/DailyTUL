@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.kjawo.DailyTUL;
 
 
 import com.google.android.gms.location.Geofence;

@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.kjawo.DailyTUL;
 
 
 import android.app.NotificationChannel;
