@@ -48,6 +48,7 @@ public class ChoiceActivity extends AppCompatActivity {
                 Intent intent = new Intent(view.getContext(), InfoActivity.class);
                 Bundle b = new Bundle();
                 b.putInt("key", dataSet.get(selectedItem));
+                b.putString("building", selectedItem);
 
                 intent.putExtras(b);
                 startActivity(intent);

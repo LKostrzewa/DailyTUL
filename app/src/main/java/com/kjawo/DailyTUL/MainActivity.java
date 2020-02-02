@@ -131,9 +131,13 @@ public class MainActivity extends AppCompatActivity implements OnCompleteListene
         Random generator = new Random();
         Map<String, Integer> dataSet = ChoiceActivity.getDataSet();
         Object[] values = dataSet.values().toArray();
+        Object[] keys = dataSet.keySet().toArray();
+        int rand = generator.nextInt(values.length);
         Bundle b = new Bundle();
-        int randomValue = (int) values[generator.nextInt(values.length)];
+        int randomValue = (int) values[rand];
+        String randomKey = (String) keys[rand];
         b.putInt("key", randomValue);
+        b.putString("building", randomKey);
 
         Intent intent = new Intent(this, InfoActivity.class);
         intent.putExtras(b);

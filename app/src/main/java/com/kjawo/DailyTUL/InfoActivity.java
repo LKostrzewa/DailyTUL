@@ -13,8 +13,12 @@ public class InfoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_info);
         Bundle b = getIntent().getExtras();
         TextView tv = findViewById(R.id.textView);
-        if(b != null)
+        TextView tv2 = findViewById(R.id.textViewBuild);
+        if(b != null){
             tv.setText(b.getInt("key"));
+            tv2.setText(b.getString("building"));
+        }
+
     }
 
 
